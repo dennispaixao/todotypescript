@@ -42,9 +42,11 @@ const initApp = (): void => {
   ) as HTMLButtonElement;
 
   clearItems.addEventListener("click", (): void => {
-    if (confirm("tem certeza que deseja limpar a lista?")) {
-      fullList.clearList();
-      template.message();
+    if (fullList.list.length) {
+      if (confirm("tem certeza que deseja limpar a lista?")) {
+        fullList.clearList();
+        template.message();
+      }
     }
   });
 
